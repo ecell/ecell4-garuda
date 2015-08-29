@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Gadget>
+    <UUID>qmy/ipFRZZzKlHw7xEKN4Adojl/WjZzeckZvIt/LVsU=</UUID>
+    <Name>Ecell4Gadget</Name>
+    <LaunchCommand>cmd /c "python gadget.py"</LaunchCommand>
+    <WorkingDirectory>gadgets\Ecell4Gadget</WorkingDirectory>
+    <IconPaths>
+        <Icon32Path>icons\anIcon.png</Icon32Path>
+    </IconPaths>
+    <Snapshots>
+        <SnapshotPath>snapshot\screenshot1.png</SnapshotPath>
+    </Snapshots>
+    <Categories>
+        <Category>Simulation</Category>
+    </Categories>
+    <Provider>E-Cell project</Provider>
+    <Description>E-Cell4 Gadget Description</Description>
+    <LoadableKeys>
+        <InputFileFormat>
+            <FileExtension>txt</FileExtension>
+            <FileFormat>txt</FileFormat>
+        </InputFileFormat>
+        <InputFileFormat>
+            <FileExtension>csv</FileExtension>
+            <FileFormat>csv</FileFormat>
+        </InputFileFormat>
+        <InputFileFormat>
+            <FileExtension>py</FileExtension>
+            <FileFormat>py</FileFormat>
+        </InputFileFormat>
+        <OutputFileFormat>
+            <FileExtension>txt</FileExtension>
+            <FileFormat>txt</FileFormat>
+        </OutputFileFormat>
+        <OutputFileFormat>
+        	<FileExtension>h5</FileExtension>
+        	<FileFormat>h5</FileFormat>
+        </OutputFileFormat>
+    </LoadableKeys>
+    <LaunchEnv>
+        <Id>f22aa6a2-beff-4487-b838-03b8275a4361</Id>
+    </LaunchEnv>
+</Gadget>
