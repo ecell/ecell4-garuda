@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Gadget>
-    <UUID>qmy/ipFRZZzKlHw7xEKN4Adojl/WjZzeckZvIt/LVsU=</UUID>
+    <UUID>a02aab2a-663f-4ccb-b2bc-7dd2d96e8bdd</UUID>
     <Name>Ecell4Gadget</Name>
     <LaunchCommand>cmd /c "python gadget.py"</LaunchCommand>
-    <WorkingDirectory>gadgets\Ecell4Gadget</WorkingDirectory>
+    <WorkingDirectory>gadgets\ecell4-garuda</WorkingDirectory>
     <IconPaths>
-        <Icon32Path>icons\anIcon.png</Icon32Path>
+        <Icon32Path>icons\ecell.jpg</Icon32Path>
     </IconPaths>
     <Snapshots>
         <SnapshotPath>snapshot\screenshot1.png</SnapshotPath>
