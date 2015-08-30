@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Gadget>
-    <UUID>a02aab2a-663f-4ccb-b2bc-7dd2d96e8bdd</UUID>
-    <Name>Ecell4Gadget</Name>
+    <UUID>4d62b271-d81d-43fb-849f-65063f2e449c</UUID>
+    <Name>E-Cell4 Gadget</Name>
     <LaunchCommand>cmd /c "python gadget.py"</LaunchCommand>
-    <WorkingDirectory>gadgets\ecell4-garuda</WorkingDirectory>
+    <WorkingDirectory>gadgets\4d62b271-d81d-43fb-849f-65063f2e449c</WorkingDirectory>
     <IconPaths>
-        <Icon32Path>icons\ecell.jpg</Icon32Path>
+        <Icon32Path>icons/ecell.jpg</Icon32Path>
     </IconPaths>
     <Snapshots>
-        <SnapshotPath>snapshot\screenshot1.png</SnapshotPath>
+        <SnapshotPath>snapshot/screenshot1.png</SnapshotPath>
     </Snapshots>
     <Categories>
-        <Category>Simulation</Category>
+        <Category>Developer</Category>
     </Categories>
     <Provider>E-Cell project</Provider>
-    <Description>E-Cell4 Gadget Description</Description>
+    <Description>Python Sample Gadget Description</Description>
     <LoadableKeys>
         <InputFileFormat>
             <FileExtension>txt</FileExtension>
@@ -25,16 +25,12 @@
             <FileFormat>csv</FileFormat>
         </InputFileFormat>
         <InputFileFormat>
-            <FileExtension>py</FileExtension>
-            <FileFormat>py</FileFormat>
+            <FileExtension>xml</FileExtension>
+            <FileFormat>xml</FileFormat>
         </InputFileFormat>
         <OutputFileFormat>
             <FileExtension>txt</FileExtension>
             <FileFormat>txt</FileFormat>
-        </OutputFileFormat>
-        <OutputFileFormat>
-        	<FileExtension>h5</FileExtension>
-        	<FileFormat>h5</FileFormat>
         </OutputFileFormat>
     </LoadableKeys>
     <LaunchEnv>
