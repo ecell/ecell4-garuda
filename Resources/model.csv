@@ -1,5 +1,6 @@
-Species,A,0.005,1,,
-Species,B,0.005,1,,
-Species,C,0.005,1,60,
-Reaction,A,B,C,,0.01
-Reaction,C,,A,B,0.3
+Species,A,0.005,1,,,
+Species,B,0.005,1,,,
+Species,C,0.005,1,60,,
+Reaction,Gillespie,A,B,C,,0.01
+Reaction,Gillespie,C,,A,B,0.3
+Time,0.1,10,,,,
