@@ -20,6 +20,15 @@ class MyReaction:
         self.right = right
         self.rate = rate
 
+class MyTime:
+    def __init__(self, stepsize, time):
+        self.stepsize = stepsize
+        self.time = time
+
+class MySim:
+    def __init__(self, sim):
+        self.sim = sim
+
 def main(csvfile):
     m = NetworkModel()
     w = GillespieWorld()
@@ -37,7 +46,7 @@ def main(csvfile):
                 if row[4] != '':
                     sp.add_mol(int(row[4]))
                     #w.add_molecules(sp, int(row[4]))
-                loglist.append(row[1])
+                # loglist.append(row[1])
             elif row[0] == "Reaction":
                 if row[4] == '':
                     rlist.append(MyReaction("binding", [row[1], row[2]], [row[3]], row[5]))
@@ -47,14 +56,16 @@ def main(csvfile):
                     rlist.append(MyReaction("unbinding", [row[1]], [row[3], row[4]], row[5]))
                     # a = create_unbinding_reaction_rule(Species(row[1]), Species(row[3]), Species(row[4]), float(row[5]))
                     # m.add_reaction_rule(a)
-            # elif row[0] == "Time":
-            #     obs = FixedIntervalNumberObserver(float(row[2]), loglist)
-            #     if row[1] == "Gillespie":
-            #         sim = GillespieSimulator(m, w)
-            #         sim.initialize()
-            #         sim.run(float(row[3]), obs)
-            #         a = pd.DataFrame(obs.data())
-            #         a.to_csv("a.csv")
+            elif row[0] == "Time":
+                mytime = MyTime(row[2], row[3])
+                mysim = MySim(row[1])
+                #obs = FixedIntervalNumberObserver(float(row[2]), loglist)
+                # if row[1] == "Gillespie":
+                #     sim = GillespieSimulator(m, w)
+                #     sim.initialize()
+                #     sim.run(float(row[3]), obs)
+                #     a = pd.DataFrame(obs.data())
+                #     a.to_csv("a.csv")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
