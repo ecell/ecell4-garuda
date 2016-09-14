@@ -67,6 +67,12 @@ def main(csvfile):
                 #     a = pd.DataFrame(obs.data())
                 #     a.to_csv("a.csv")
 
+    for sp in slist:
+        tmp = Species(sp.name, sp.d, sp.radius)
+        m.add_species_attribute(tmp)
+        if hasattr(sp, 'mol'):
+            w.add_molecules(tmp, int(sp.mol))
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="read model csv and simulate it")
