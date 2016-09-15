@@ -14,8 +14,8 @@ class MySpecies:
         self.mol = mol
 
 class MyReaction:
-    def __init__(self, type, left, right, rate):
-        self.type = type
+    def __init__(self, rtype, left, right, rate):
+        self.rtype = rtype
         self.left = left
         self.right = right
         self.rate = rate
@@ -42,20 +42,13 @@ def main(csvfile):
             if row[0] == "Species":
                 sp = MySpecies(row[1], row[2], row[3])
                 slist.append(sp)
-                #m.add_species_attribute(sp)
                 if row[4] != '':
                     sp.add_mol(int(row[4]))
-                    #w.add_molecules(sp, int(row[4]))
-                # loglist.append(row[1])
             elif row[0] == "Reaction":
                 if row[4] == '':
                     rlist.append(MyReaction("binding", [row[1], row[2]], [row[3]], row[5]))
-                    # a = create_binding_reaction_rule(Species(row[1]), Species(row[2]), Species(row[3]), float(row[5]))
-                    # m.add_reaction_rule(a)
                 elif row[2] == '':
                     rlist.append(MyReaction("unbinding", [row[1]], [row[3], row[4]], row[5]))
-                    # a = create_unbinding_reaction_rule(Species(row[1]), Species(row[3]), Species(row[4]), float(row[5]))
-                    # m.add_reaction_rule(a)
             elif row[0] == "Time":
                 mytime = MyTime(row[2], row[3])
                 mysim = MySim(row[1])
@@ -72,6 +65,13 @@ def main(csvfile):
         m.add_species_attribute(tmp)
         if hasattr(sp, 'mol'):
             w.add_molecules(tmp, int(sp.mol))
+        loglist.append(sp.name)
+    
+    for r in rlist:
+        if r.rtype == "binding":
+            m.add_reaction_rule(create_binding_reaction_rule(Species(r.left[0]), Species(r.left[1]), Species(r.right[0]), float(r.rate)))
+        elif r.rtype == "unbinding":
+            m.add_reaction_rule(create_unbinding_reaction_rule(Species(r.left[0]), Species(r.right[0]), Species(r.right[1]), float(r.rate)))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
